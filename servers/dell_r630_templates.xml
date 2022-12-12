@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.2</version>
+    <date>2022-12-12T13:13:04Z</date>
+    <template_groups>
+        <template_group>
+            <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
+            <name>custom_templates</name>
+        </template_group>
+    </template_groups>
+    <templates>
+        <template>
+            <uuid>532345253b0346788c9dc71f82eee7fd</uuid>
+            <template>Dell R630</template>
+            <name>Dell R630</name>
+            <description>Server Dell Power Edge R630</description>
+            <groups>
+                <group>
+                    <name>custom_templates</name>
+                </group>
+            </groups>
+            <macros>
+                <macro>
+                    <macro>{$SNMP_COMMUNITY}</macro>
+                    <value>public</value>
+                </macro>
+            </macros>
+        </template>
+    </templates>
+</zabbix_export>
