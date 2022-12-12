@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-12T18:58:33Z</date>
+    <date>2022-12-12T19:08:55Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -29,6 +29,40 @@
                     <valuemap>
                         <name>controller Roll Up Status</name>
                     </valuemap>
+                    <triggers>
+                        <trigger>
+                            <uuid>8dadc7fc78d7438d98e34d3294e3c233</uuid>
+                            <expression>last(/Dell R630/controllerComponentStatus,#1)=1 or last(/Dell R630/controllerComponentStatus,#1)=2</expression>
+                            <name>controller Component Status 1-2</name>
+                            <priority>INFO</priority>
+                            <description>Status controller Component
+1: Other. 2: Unknown.</description>
+                        </trigger>
+                        <trigger>
+                            <uuid>d7e5247f9c60488096af73e344de82f8</uuid>
+                            <expression>last(/Dell R630/controllerComponentStatus,#1)=4</expression>
+                            <name>controller Component Status 4</name>
+                            <priority>WARNING</priority>
+                            <description>Status controller Component 
+4: Non-critical</description>
+                        </trigger>
+                        <trigger>
+                            <uuid>3a12b1476c934b67a7c2508d42fb6e1f</uuid>
+                            <expression>last(/Dell R630/controllerComponentStatus,#1)=5</expression>
+                            <name>controller Component Status 5</name>
+                            <priority>HIGH</priority>
+                            <description>Status controller Component 
+5: Critical.</description>
+                        </trigger>
+                        <trigger>
+                            <uuid>ded4ca080cc048b294ca2fcdc0f2c2b9</uuid>
+                            <expression>last(/Dell R630/controllerComponentStatus,#1)=6</expression>
+                            <name>controller Component Status 6</name>
+                            <priority>DISASTER</priority>
+                            <description>Status controller Component 
+6: Non-recoverable.</description>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <uuid>7a7eaffd7c094c6c9d95ddaa88ae9183</uuid>
