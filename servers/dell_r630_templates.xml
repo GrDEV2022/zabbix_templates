@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-12T18:51:04Z</date>
+    <date>2022-12-12T18:58:33Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -20,6 +20,16 @@
                 </group>
             </groups>
             <items>
+                <item>
+                    <uuid>4adfe16949664975bb175c8dabc7470a</uuid>
+                    <name>controller Component Status</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.38.1</snmp_oid>
+                    <key>controllerComponentStatus</key>
+                    <valuemap>
+                        <name>controller Roll Up Status</name>
+                    </valuemap>
+                </item>
                 <item>
                     <uuid>7a7eaffd7c094c6c9d95ddaa88ae9183</uuid>
                     <name>controller Roll Up Status</name>
