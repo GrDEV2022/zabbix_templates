@@ -18,3 +18,4 @@ Triggers
 	Warning: 4
 	Hight: 5
 	Disaster: 6
+3) physical Disk State
