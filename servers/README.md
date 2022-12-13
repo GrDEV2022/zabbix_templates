@@ -11,6 +11,7 @@ Monitoring
 5) physical Disk Smart Alert Indication
 6) physical Disk Power State
 7) battery State
+8) battery Component Status
 Triggers
 1) controller Roll Up Status
 	Information: 1, 2

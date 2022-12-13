@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T05:58:46Z</date>
+    <date>2022-12-13T06:05:46Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -21,11 +21,24 @@
             </groups>
             <items>
                 <item>
+                    <uuid>12f8992ecf484c16b182be0fc9bccd8b</uuid>
+                    <name>battery Component Status</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.15.1.6.1</snmp_oid>
+                    <key>batteryComponentStatus</key>
+                    <valuemap>
+                        <name>battery Component Status</name>
+                    </valuemap>
+                </item>
+                <item>
                     <uuid>2a17f866572b48beae3e5b1a4dbf68a8</uuid>
                     <name>battery State</name>
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.15.1.4.1</snmp_oid>
                     <key>batteryState</key>
+                    <valuemap>
+                        <name>battery State</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>28f88dce285346f1bf59b68957c64c13</uuid>
@@ -270,6 +283,36 @@ unknown ( 1 )</description>
                 </macro>
             </macros>
             <valuemaps>
+                <valuemap>
+                    <uuid>c2f4ee449d16492ea9823cb4827e2e25</uuid>
+                    <name>battery Component Status</name>
+                    <mappings>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>Other</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>2</value>
+                            <newvalue>Unknown</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>4</value>
+                            <newvalue>Non-critical</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>5</value>
+                            <newvalue>Critical</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>6</value>
+                            <newvalue>Non-recoverable</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
                 <valuemap>
                     <uuid>26881cb4e9524e11a6c4ad3ed1a1a503</uuid>
                     <name>battery State</name>
