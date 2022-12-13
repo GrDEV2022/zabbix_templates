@@ -7,6 +7,7 @@ Monitoring
 1) controller Roll Up Status
 2) controller Component Status
 3) physical Disk State
+4) physical Disk Component Status
 Triggers
 1) controller Roll Up Status
 	Information: 1, 2
