@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T06:09:59Z</date>
+    <date>2022-12-13T06:15:10Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -167,6 +167,16 @@
 6: Non-recoverable.</description>
                         </trigger>
                     </triggers>
+                </item>
+                <item>
+                    <uuid>151b74925f8d495c9932c9f294355a67</uuid>
+                    <name>virtual Disk State</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.140.1.1.4.1</snmp_oid>
+                    <key>virtualDiskState</key>
+                    <valuemap>
+                        <name>virtual Disk State</name>
+                    </valuemap>
                 </item>
             </items>
             <discovery_rules>
@@ -500,6 +510,28 @@ unknown ( 1 )</description>
                         <mapping>
                             <value>1</value>
                             <newvalue>Error</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>dc923f50ef884485932d3aa01d802a99</uuid>
+                    <name>virtual Disk State</name>
+                    <mappings>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>unknown</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>2</value>
+                            <newvalue>online</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>failed</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>4</value>
+                            <newvalue>degraded</newvalue>
                         </mapping>
                     </mappings>
                 </valuemap>
