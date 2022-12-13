@@ -17,18 +17,18 @@ Triggers
 1) controller Roll Up Status
 	Information: 1, 2
 	Warning: 4
-	Hight: 5
+	High: 5
 	Disaster: 6
 2) controller Component Status
 	Information: 1, 2
 	Warning: 4
-	Hight: 5
+	High: 5
 	Disaster: 6
 3) physical Disk State
 4) physical Disk Component Status
 	Information: 1, 2
 	Warning: 4
-	Hight: 5
+	High: 5
 	Disaster: 6
 5) physical Disk Smart Alert Indication
 6) physical Disk Power State
@@ -39,8 +39,11 @@ Triggers
 8) battery Component Status
 	Information: 1, 2
 	Warning: 4
-	Hight: 5
+	High: 5
 	Disaster: 6
+9) virtual Disk State
+	Warning: 1
+	High: 3, 4
 Discovery
 1) physical Disk State
 2) physical Disk Component Status

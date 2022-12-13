@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T06:15:10Z</date>
+    <date>2022-12-13T06:18:10Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -177,6 +177,20 @@
                     <valuemap>
                         <name>virtual Disk State</name>
                     </valuemap>
+                    <triggers>
+                        <trigger>
+                            <uuid>1a22964d8e6d46168e431198712c875f</uuid>
+                            <expression>last(/Dell R630/virtualDiskState,#1)=1</expression>
+                            <name>virtual Disk State 1</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                        <trigger>
+                            <uuid>acc437115ace48658867f494eae9b3ca</uuid>
+                            <expression>last(/Dell R630/virtualDiskState,#1)=3 or last(/Dell R630/virtualDiskState,#1)=4</expression>
+                            <name>virtualDiskState 3-4</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
                 </item>
             </items>
             <discovery_rules>
