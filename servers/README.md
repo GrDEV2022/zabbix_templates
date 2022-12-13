@@ -28,6 +28,7 @@ Monitoring
 22) system State Amperage Status Combined
 23) system State Voltage Status Combined
 24) system State Power Supply Status Combined
+25) system State Power Unit Status Redundancy
 Triggers
 1) controller Roll Up Status
 	Information: 1, 2
@@ -78,6 +79,7 @@ Triggers
 22) system State Amperage Status Combined
 23) system State Voltage Status Combined
 24) system State Power Supply Status Combined
+25) system State Power Unit Status Redundancy
 Discovery
 1) physical Disk State
 2) physical Disk Component Status
