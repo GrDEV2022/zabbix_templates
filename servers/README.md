@@ -35,6 +35,11 @@ Triggers
 7) battery State
 	Information: 6
 	Warning: 1, 3, 4, 5, 7
+8) battery Component Status
+	Information: 1, 2
+	Warning: 4
+	Hight: 5
+	Disaster: 6
 Discovery
 1) physical Disk State
 2) physical Disk Component Status

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T06:05:46Z</date>
+    <date>2022-12-13T06:09:59Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -29,6 +29,32 @@
                     <valuemap>
                         <name>battery Component Status</name>
                     </valuemap>
+                    <triggers>
+                        <trigger>
+                            <uuid>ddc244fbe847492a9750a49a08e674a1</uuid>
+                            <expression>last(/Dell R630/batteryComponentStatus,#1)=1 or last(/Dell R630/batteryComponentStatus,#1)=2</expression>
+                            <name>battery Component Status 1-2</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                        <trigger>
+                            <uuid>39fd6ae21e11432fa5c743e3c54bee43</uuid>
+                            <expression>last(/Dell R630/batteryComponentStatus,#1)=4</expression>
+                            <name>battery Component Status 4</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                        <trigger>
+                            <uuid>fa7a51c1ec8c42d19b7d90d47c9b1d8e</uuid>
+                            <expression>last(/Dell R630/batteryComponentStatus,#1)=5</expression>
+                            <name>battery Component Status 5</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                        <trigger>
+                            <uuid>cb232c9ab5c844df8f84476cc475319f</uuid>
+                            <expression>last(/Dell R630/batteryComponentStatus,#1)=6</expression>
+                            <name>battery Component Status 6</name>
+                            <priority>DISASTER</priority>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <uuid>2a17f866572b48beae3e5b1a4dbf68a8</uuid>
