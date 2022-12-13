@@ -15,6 +15,7 @@ Monitoring
 9) virtual Disk State
 10) virtual Disk Component Status
 11) virtual Disk Bad Blocks Detected
+12) system State Temperature Statistics Status Combined
 Triggers
 1) controller Roll Up Status
 	Information: 1, 2
@@ -52,6 +53,7 @@ Triggers
 	High: 5
 	Disaster: 6
 11) virtual Disk Bad Blocks Detected
+12) system State Temperature Statistics Status Combined
 Discovery
 1) physical Disk State
 2) physical Disk Component Status
