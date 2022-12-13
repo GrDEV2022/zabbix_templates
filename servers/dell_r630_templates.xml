@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T07:55:55Z</date>
+    <date>2022-12-13T07:59:07Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -338,6 +338,25 @@
                             <expression>last(/Dell R630/systemStateTemperatureStatusCombined,#1)&lt;&gt;3</expression>
                             <name>system State Temperature Status Combined</name>
                             <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>0dadad1ce3ac407f9fc6fd636b05764b</uuid>
+                    <name>system State Voltage Status Combined</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.674.10892.5.4.200.10.1.12.1</snmp_oid>
+                    <key>systemStateVoltageStatusCombined</key>
+                    <description>This attribute defines the combined status of all
+ voltage probes of this system.</description>
+                    <triggers>
+                        <trigger>
+                            <uuid>df2b4d392b434406977cf548414d5dc2</uuid>
+                            <expression>last(/Dell R630/systemStateVoltageStatusCombined,#1)&lt;&gt;3</expression>
+                            <name>system State Voltage Status Combined</name>
+                            <priority>WARNING</priority>
+                            <description>This attribute defines the combined status of all
+ voltage probes of this system.</description>
                         </trigger>
                     </triggers>
                 </item>

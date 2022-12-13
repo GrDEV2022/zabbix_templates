@@ -26,6 +26,7 @@ Monitoring
 20) system State Cooling Device Status Combined
 21) system State Cooling Unit Status Redundancy
 22) system State Amperage Status Combined
+23) system State Voltage Status Combined
 Triggers
 1) controller Roll Up Status
 	Information: 1, 2
@@ -74,6 +75,7 @@ Triggers
 20) system State Cooling Device Status Combined
 21) system State Cooling Unit Status Redundancy
 22) system State Amperage Status Combined
+23) system State Voltage Status Combined
 Discovery
 1) physical Disk State
 2) physical Disk Component Status
