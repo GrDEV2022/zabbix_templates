@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T08:53:48Z</date>
+    <date>2022-12-13T13:13:42Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -609,9 +609,26 @@
                             <trigger_prototypes>
                                 <trigger_prototype>
                                     <uuid>2f840ff75bce4fa18238a3807be0bf47</uuid>
-                                    <expression>last(/Dell R630/physicalDiskState.[&quot;{#SNMPINDEX}&quot;],#1)&lt;&gt;3</expression>
-                                    <name>Physical Disk State</name>
+                                    <expression>last(/Dell R630/physicalDiskState.[&quot;{#SNMPINDEX}&quot;],#1)&lt;&gt;3 and last(/Dell R630/physicalDiskState.[&quot;{#SNMPINDEX}&quot;],#1)&lt;&gt;3</expression>
+                                    <name>Physical Disk State - {#SNMPINDEX}</name>
                                     <priority>WARNING</priority>
+                                    <description>The current state of this physical disk. Possible states: 
+ 1: The current state could not be determined. 
+ 2: The physical disk is available for use, but no RAID configuration has been assigned. 
+ 3: A RAID configuration has been assigned to the physical disk. 
+ 4: The physical disk has been moved from another controller and contains all or some portion of a virtual disk. 
+ 5: The physical disk is not available to the RAID controller. 
+ 6: The physical disk is currently blocked by controller. 
+ 7: The physical disk is not operational. 
+ 8: The physical disk is not a RAID capable disk 
+ 9: The physical disk has been removed. 
+ 10:The physical disk media has been placed in read only mode.</description>
+                                </trigger_prototype>
+                                <trigger_prototype>
+                                    <uuid>235c511ad8ad46289c41bc5a0da7be84</uuid>
+                                    <expression>last(/Dell R630/physicalDiskState.[&quot;{#SNMPINDEX}&quot;],#1)=2</expression>
+                                    <name>Physical Disk State - {#SNMPINDEX}</name>
+                                    <priority>INFO</priority>
                                     <description>The current state of this physical disk. Possible states: 
  1: The current state could not be determined. 
  2: The physical disk is available for use, but no RAID configuration has been assigned. 
