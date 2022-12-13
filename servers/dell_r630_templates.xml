@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T06:35:06Z</date>
+    <date>2022-12-13T06:37:28Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -177,6 +177,14 @@
                     <valuemap>
                         <name>virtual Disk Bad Blocks Detected</name>
                     </valuemap>
+                    <triggers>
+                        <trigger>
+                            <uuid>0376ae58920f4803adbed26d5f3afc3f</uuid>
+                            <expression>last(/Dell R630/virtualDiskBadBlocksDetected,#1)=1</expression>
+                            <name>virtual Disk Bad Blocks Detected</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <uuid>a7f4c58047d64cecbe50c9295e56e9da</uuid>

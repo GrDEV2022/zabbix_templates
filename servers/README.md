@@ -51,6 +51,7 @@ Triggers
 	Warning: 4
 	High: 5
 	Disaster: 6
+11) virtual Disk Bad Blocks Detected
 Discovery
 1) physical Disk State
 2) physical Disk Component Status
