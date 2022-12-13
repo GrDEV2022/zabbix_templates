@@ -22,6 +22,7 @@ Monitoring
 16) system State Power Unit Status Combined
 17) system State Chassis Intrusion Status Combined
 18) system State Memory Device Status Combined
+19) system State Temperature Status Combined
 Triggers
 1) controller Roll Up Status
 	Information: 1, 2
@@ -66,6 +67,7 @@ Triggers
 16) system State Power Unit Status Combined
 17) system StateC hassis Intrusion Status Combined
 18) system State Memory Device Status Combined
+19) system State Temperature Status Combined
 Discovery
 1) physical Disk State
 2) physical Disk Component Status

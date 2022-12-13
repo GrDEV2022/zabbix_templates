@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T07:39:20Z</date>
+    <date>2022-12-13T07:43:04Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -269,6 +269,21 @@
                             <uuid>7c932efed5244a22a40b3a814536e1d8</uuid>
                             <expression>last(/Dell R630/systemStateTemperatureStatisticsStatusCombined,#1)&lt;&gt;3</expression>
                             <name>system State Temperature Statistics Status Combined</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <uuid>c38e3ec731464f2fa6dfc6c336a796f8</uuid>
+                    <name>system State Temperature Status Combined</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.674.10892.5.4.200.10.1.24.1</snmp_oid>
+                    <key>systemStateTemperatureStatusCombined</key>
+                    <triggers>
+                        <trigger>
+                            <uuid>0392be954a11457082a8eefebd52cbe1</uuid>
+                            <expression>last(/Dell R630/systemStateTemperatureStatusCombined,#1)&lt;&gt;3</expression>
+                            <name>system State Temperature Status Combined</name>
                             <priority>WARNING</priority>
                         </trigger>
                     </triggers>
