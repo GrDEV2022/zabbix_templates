@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T05:23:23Z</date>
+    <date>2022-12-13T05:29:06Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -126,6 +126,32 @@
                             <valuemap>
                                 <name>physical Disk Component Status</name>
                             </valuemap>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <uuid>a1238cf0d2894176b53b87d0f881713c</uuid>
+                                    <expression>last(/Dell R630/physicalDiskComponentStatus.[&quot;{#SNMPINDEX}&quot;],#1)=1 or last(/Dell R630/physicalDiskComponentStatus.[&quot;{#SNMPINDEX}&quot;],#1)=2</expression>
+                                    <name>Physical Disk Component Status 1-2</name>
+                                    <priority>INFO</priority>
+                                </trigger_prototype>
+                                <trigger_prototype>
+                                    <uuid>244ddcfd35644bf08bd76a6f00c96df4</uuid>
+                                    <expression>last(/Dell R630/physicalDiskComponentStatus.[&quot;{#SNMPINDEX}&quot;],#1)=4</expression>
+                                    <name>Physical Disk Component Status 4</name>
+                                    <priority>WARNING</priority>
+                                </trigger_prototype>
+                                <trigger_prototype>
+                                    <uuid>0e7e7e2536ce457ea5850c8aec49db1d</uuid>
+                                    <expression>last(/Dell R630/physicalDiskComponentStatus.[&quot;{#SNMPINDEX}&quot;],#1)=5</expression>
+                                    <name>Physical Disk Component Status 5</name>
+                                    <priority>HIGH</priority>
+                                </trigger_prototype>
+                                <trigger_prototype>
+                                    <uuid>a6d7aa7c7ee74d9a9cb8f09f0fa8934e</uuid>
+                                    <expression>last(/Dell R630/physicalDiskComponentStatus.[&quot;{#SNMPINDEX}&quot;],#1)=6</expression>
+                                    <name>Physical Disk Component Status 6</name>
+                                    <priority>DISASTER</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                     </item_prototypes>
                 </discovery_rule>

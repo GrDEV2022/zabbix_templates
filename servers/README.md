@@ -20,3 +20,8 @@ Triggers
 	Hight: 5
 	Disaster: 6
 3) physical Disk State
+4) physical Disk Component Status
+	Information: 1, 2
+	Warning: 4
+	Hight: 5
+	Disaster: 6
