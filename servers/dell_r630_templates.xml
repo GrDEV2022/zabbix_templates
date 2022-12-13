@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T05:29:06Z</date>
+    <date>2022-12-13T05:34:52Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -156,6 +156,25 @@
                     </item_prototypes>
                 </discovery_rule>
                 <discovery_rule>
+                    <uuid>87f289d4bb7a431cb004de84af271fdf</uuid>
+                    <name>physical Disk Smart Alert Indication</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.31]</snmp_oid>
+                    <key>physicalDiskSmartAlertIndication</key>
+                    <item_prototypes>
+                        <item_prototype>
+                            <uuid>828bbf3b45d342378d251703a70bbe28</uuid>
+                            <name>physical Disk Smart Alert Indication - {#SNMPINDEX}</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.31.{#SNMPINDEX}</snmp_oid>
+                            <key>physicalDiskSmartAlertIndication.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <valuemap>
+                                <name>physical Disk Smart Alert Indication</name>
+                            </valuemap>
+                        </item_prototype>
+                    </item_prototypes>
+                </discovery_rule>
+                <discovery_rule>
                     <uuid>a73bd2b8fa6142c380e6dd5c7bbd1f99</uuid>
                     <name>physical Disk State</name>
                     <type>SNMP_AGENT</type>
@@ -282,6 +301,20 @@ unknown ( 1 )</description>
                         <mapping>
                             <value>6</value>
                             <newvalue>Non-recoverable</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>b516fb4b91b7427aae565ee50660edf3</uuid>
+                    <name>physical Disk Smart Alert Indication</name>
+                    <mappings>
+                        <mapping>
+                            <value>0</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>Error</newvalue>
                         </mapping>
                     </mappings>
                 </valuemap>

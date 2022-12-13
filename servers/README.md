@@ -8,6 +8,7 @@ Monitoring
 2) controller Component Status
 3) physical Disk State
 4) physical Disk Component Status
+5) physical Disk Smart Alert Indication
 Triggers
 1) controller Roll Up Status
 	Information: 1, 2
