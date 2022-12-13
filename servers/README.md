@@ -18,6 +18,8 @@ Monitoring
 12) system State Temperature Statistics Status Combined
 13) system State Battery Status Combined
 14) system State Processor Device Status Combined
+15) system State Cooling Unit Status Combined
+16) system State Power Unit Status Combined
 Triggers
 1) controller Roll Up Status
 	Information: 1, 2
@@ -58,6 +60,8 @@ Triggers
 12) system State Temperature Statistics Status Combined
 13) system State Battery Status Combined
 14) system State Processor Device Status Combined
+15) system State Cooling Unit Status Combined
+16) system State Power Unit Status Combined
 Discovery
 1) physical Disk State
 2) physical Disk Component Status
