@@ -28,3 +28,5 @@ Triggers
 	Hight: 5
 	Disaster: 6
 5) physical Disk Smart Alert Indication
+6) physical Disk Power State
+	Warning: 1, 3, 4

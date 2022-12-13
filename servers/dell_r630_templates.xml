@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T05:43:49Z</date>
+    <date>2022-12-13T05:47:42Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -171,6 +171,14 @@
                             <valuemap>
                                 <name>physical Disk Power State</name>
                             </valuemap>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <uuid>5858019363004244999840c45546993a</uuid>
+                                    <expression>last(/Dell R630/physicalDiskPowerState.[&quot;{#SNMPINDEX}&quot;],#1)=1 or last(/Dell R630/physicalDiskPowerState.[&quot;{#SNMPINDEX}&quot;],#1)=3 or last(/Dell R630/physicalDiskPowerState.[&quot;{#SNMPINDEX}&quot;],#1)=4</expression>
+                                    <name>physical Disk Power State</name>
+                                    <priority>WARNING</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                     </item_prototypes>
                 </discovery_rule>
