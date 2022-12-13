@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T08:09:17Z</date>
+    <date>2022-12-13T08:50:17Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -26,33 +26,19 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.15.1.6.1</snmp_oid>
                     <key>batteryComponentStatus</key>
+                    <description>The status of the battery itself without the propagation of any contained component status. Possible values: 
+ 1: Other 2: Unknown 3: OK 4: Non-critical 5: Critical 6: Non-recoverable</description>
                     <valuemap>
                         <name>battery Component Status</name>
                     </valuemap>
                     <triggers>
                         <trigger>
-                            <uuid>ddc244fbe847492a9750a49a08e674a1</uuid>
-                            <expression>last(/Dell R630/batteryComponentStatus,#1)=1 or last(/Dell R630/batteryComponentStatus,#1)=2</expression>
-                            <name>battery Component Status 1-2</name>
-                            <priority>INFO</priority>
-                        </trigger>
-                        <trigger>
                             <uuid>39fd6ae21e11432fa5c743e3c54bee43</uuid>
                             <expression>last(/Dell R630/batteryComponentStatus,#1)=4</expression>
-                            <name>battery Component Status 4</name>
+                            <name>battery Component Status</name>
                             <priority>WARNING</priority>
-                        </trigger>
-                        <trigger>
-                            <uuid>fa7a51c1ec8c42d19b7d90d47c9b1d8e</uuid>
-                            <expression>last(/Dell R630/batteryComponentStatus,#1)=5</expression>
-                            <name>battery Component Status 5</name>
-                            <priority>HIGH</priority>
-                        </trigger>
-                        <trigger>
-                            <uuid>cb232c9ab5c844df8f84476cc475319f</uuid>
-                            <expression>last(/Dell R630/batteryComponentStatus,#1)=6</expression>
-                            <name>battery Component Status 6</name>
-                            <priority>DISASTER</priority>
+                            <description>The status of the battery itself without the propagation of any contained component status. Possible values: 
+ 1: Other 2: Unknown 3: OK 4: Non-critical 5: Critical 6: Non-recoverable</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -62,21 +48,31 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.15.1.4.1</snmp_oid>
                     <key>batteryState</key>
+                    <description>Current state of battery. Possible values: 
+ 1: The current state could not be determined. 
+ 2: The battery is operating normally. 
+ 3: The battery has failed and needs to be replaced. 
+ 4: The battery temperature is high or charge level is depleting. 
+ 5: The battery is missing or not detected. 
+ 6: The battery is undergoing the re-charge phase. 
+ 7: The battery voltage or charge level is below the threshold.</description>
                     <valuemap>
                         <name>battery State</name>
                     </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>28f88dce285346f1bf59b68957c64c13</uuid>
-                            <expression>last(/Dell R630/batteryState,#1)=1 or last(/Dell R630/batteryState,#1)=3 or last(/Dell R630/batteryState,#1)=4 or last(/Dell R630/batteryState,#1)=5 or last(/Dell R630/batteryState,#1)=7</expression>
+                            <expression>last(/Dell R630/batteryState,#1)=1</expression>
                             <name>battery State</name>
                             <priority>WARNING</priority>
-                        </trigger>
-                        <trigger>
-                            <uuid>99e7753b54794f1482353b4aeade11f9</uuid>
-                            <expression>last(/Dell R630/batteryState,#1)=6</expression>
-                            <name>battery State 6</name>
-                            <priority>INFO</priority>
+                            <description>Current state of battery. Possible values: 
+ 1: The current state could not be determined. 
+ 2: The battery is operating normally. 
+ 3: The battery has failed and needs to be replaced. 
+ 4: The battery temperature is high or charge level is depleting. 
+ 5: The battery is missing or not detected. 
+ 6: The battery is undergoing the re-charge phase. 
+ 7: The battery voltage or charge level is below the threshold.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -86,41 +82,19 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.38.1</snmp_oid>
                     <key>controllerComponentStatus</key>
+                    <description>The status of the controller itself without the propagation of any contained component status. Possible values: 
+ 1: Other 2: Unknown 3: OK 4: Non-critical 5: Critical 6: Non-recoverable</description>
                     <valuemap>
                         <name>controller Component Status</name>
                     </valuemap>
                     <triggers>
                         <trigger>
-                            <uuid>8dadc7fc78d7438d98e34d3294e3c233</uuid>
-                            <expression>last(/Dell R630/controllerComponentStatus,#1)=1 or last(/Dell R630/controllerComponentStatus,#1)=2</expression>
-                            <name>controller Component Status 1-2</name>
-                            <priority>INFO</priority>
-                            <description>Status controller Component
-1: Other. 2: Unknown.</description>
-                        </trigger>
-                        <trigger>
                             <uuid>d7e5247f9c60488096af73e344de82f8</uuid>
-                            <expression>last(/Dell R630/controllerComponentStatus,#1)=4</expression>
-                            <name>controller Component Status 4</name>
+                            <expression>last(/Dell R630/controllerComponentStatus,#1)&lt;&gt;3</expression>
+                            <name>controller Component Status</name>
                             <priority>WARNING</priority>
-                            <description>Status controller Component 
-4: Non-critical</description>
-                        </trigger>
-                        <trigger>
-                            <uuid>3a12b1476c934b67a7c2508d42fb6e1f</uuid>
-                            <expression>last(/Dell R630/controllerComponentStatus,#1)=5</expression>
-                            <name>controller Component Status 5</name>
-                            <priority>HIGH</priority>
-                            <description>Status controller Component 
-5: Critical.</description>
-                        </trigger>
-                        <trigger>
-                            <uuid>ded4ca080cc048b294ca2fcdc0f2c2b9</uuid>
-                            <expression>last(/Dell R630/controllerComponentStatus,#1)=6</expression>
-                            <name>controller Component Status 6</name>
-                            <priority>DISASTER</priority>
-                            <description>Status controller Component 
-6: Non-recoverable.</description>
+                            <description>The status of the controller itself without the propagation of any contained component status. Possible values: 
+ 1: Other 2: Unknown 3: OK 4: Non-critical 5: Critical 6: Non-recoverable</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -130,41 +104,19 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.37.1</snmp_oid>
                     <key>controllerRollUpStatus</key>
+                    <description>Severity of the controller state. This is the combined status of the controller and its components. Possible values: 
+ 1: Other. 2: Unknown. 3: OK 4: Non-critical 5: Critical. 6: Non-recoverable.</description>
                     <valuemap>
                         <name>controller Roll Up Status</name>
                     </valuemap>
                     <triggers>
                         <trigger>
-                            <uuid>93385bc622d04fbcaaceaef6d80496e8</uuid>
-                            <expression>last(/Dell R630/controllerRollUpStatus,#1)=1 or last(/Dell R630/controllerRollUpStatus,#1)=2</expression>
-                            <name>controller Roll Up Status 1-2</name>
-                            <priority>INFO</priority>
-                            <description>Status controller Roll Up
-1: Other. 2: Unknown.</description>
-                        </trigger>
-                        <trigger>
                             <uuid>619f534eed954f3f88d6e219a8f4dcc4</uuid>
-                            <expression>last(/Dell R630/controllerRollUpStatus,#1)=4</expression>
-                            <name>controller Roll Up Status 4</name>
+                            <expression>last(/Dell R630/controllerRollUpStatus,#1)&lt;&gt;3</expression>
+                            <name>controller Roll Up Status</name>
                             <priority>WARNING</priority>
-                            <description>Status controller Roll Up
-4: Non-critical</description>
-                        </trigger>
-                        <trigger>
-                            <uuid>9494e5d8c33344049bbbd53f4a0f2c34</uuid>
-                            <expression>last(/Dell R630/controllerRollUpStatus,#1)=5</expression>
-                            <name>controller Roll Up Status 5</name>
-                            <priority>HIGH</priority>
-                            <description>Status controller Roll Up
-5: Critical.</description>
-                        </trigger>
-                        <trigger>
-                            <uuid>04914223d9e841d385f8fc378f80c813</uuid>
-                            <expression>last(/Dell R630/controllerRollUpStatus,#1)=6</expression>
-                            <name>controller Roll Up Status 6</name>
-                            <priority>DISASTER</priority>
-                            <description>Status controller Roll Up
-6: Non-recoverable.</description>
+                            <description>Severity of the controller state. This is the combined status of the controller and its components. Possible values: 
+ 1: Other. 2: Unknown. 3: OK 4: Non-critical 5: Critical. 6: Non-recoverable.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -193,12 +145,16 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.4.200.10.1.52.1</snmp_oid>
                     <key>systemStateBatteryStatusCombined</key>
+                    <description>This attribute defines the combined status of all
+ batteries of this system.</description>
                     <triggers>
                         <trigger>
                             <uuid>a449472514a840f5b852b9815e6a83ee</uuid>
                             <expression>last(/Dell R630/systemStateBatteryStatusCombined,#1)&lt;&gt;3</expression>
                             <name>system State Battery Status Combined</name>
                             <priority>WARNING</priority>
+                            <description>This attribute defines the combined status of all
+ batteries of this system.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -208,12 +164,16 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.4.200.10.1.30.1</snmp_oid>
                     <key>systemStateChassisIntrusionStatusCombined</key>
+                    <description>This attribute defines the combined status of all
+ intrusion detection devices of this system chassis.</description>
                     <triggers>
                         <trigger>
                             <uuid>02fc3dc98fa7433a898e6c112c17af6a</uuid>
                             <expression>last(/Dell R630/systemStateChassisIntrusionStatusCombined,#1)&lt;&gt;3</expression>
                             <name>system State Chassis Intrusion Status Combined</name>
                             <priority>WARNING</priority>
+                            <description>This attribute defines the combined status of all
+ intrusion detection devices of this system chassis.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -223,12 +183,16 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.4.200.10.1.21.1</snmp_oid>
                     <key>systemStateCoolingDeviceStatusCombined</key>
+                    <description>This attribute defines the combined status of all
+ cooling devices of this system.</description>
                     <triggers>
                         <trigger>
                             <uuid>56de5205de5049218d868484286e650d</uuid>
                             <expression>last(/Dell R630/systemStateCoolingDeviceStatusCombined,#1)&lt;&gt;3</expression>
                             <name>system State Cooling Device Status Combined</name>
                             <priority>WARNING</priority>
+                            <description>This attribute defines the combined status of all
+ cooling devices of this system.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -238,12 +202,16 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.4.200.10.1.44.1</snmp_oid>
                     <key>systemStateCoolingUnitStatusCombined</key>
+                    <description>This attribute defines the combined status
+ of all cooling units of this system.</description>
                     <triggers>
                         <trigger>
                             <uuid>14a51c69f8ee4a60b77237066fdbc202</uuid>
                             <expression>last(/Dell R630/systemStateCoolingUnitStatusCombined,#1)&lt;&gt;3</expression>
                             <name>system State Cooling Unit Status Combined</name>
                             <priority>WARNING</priority>
+                            <description>This attribute defines the combined status
+ of all cooling units of this system.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -272,12 +240,16 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.4.200.10.1.27.1</snmp_oid>
                     <key>systemStateMemoryDeviceStatusCombined</key>
+                    <description>This attribute defines the combined status of all
+ memory devices of this system.</description>
                     <triggers>
                         <trigger>
                             <uuid>7f0e8b003b064f668cf695feba4396f6</uuid>
                             <expression>last(/Dell R630/systemStateMemoryDeviceStatusCombined,#1)&lt;&gt;3</expression>
                             <name>system State Memory Device Status Combined</name>
                             <priority>WARNING</priority>
+                            <description>This attribute defines the combined status of all
+ memory devices of this system.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -294,7 +266,6 @@
                             <uuid>724f425d35ef4f43bc6d86f2434e0689</uuid>
                             <expression>last(/Dell R630/systemStatePowerSupplyStatusCombined,#1)&lt;&gt;3</expression>
                             <name>system State Power Supply Status Combined</name>
-                            <opdata>system State Power Supply Status Combined</opdata>
                             <priority>WARNING</priority>
                             <description>This attribute defines the combined status of all
  power supplies of this system.</description>
@@ -307,12 +278,16 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.4.200.10.1.42.1</snmp_oid>
                     <key>systemStatePowerUnitStatusCombined</key>
+                    <description>This attribute defines the combined status
+ of all power units of this chassis.</description>
                     <triggers>
                         <trigger>
                             <uuid>7788bd5953bc469cb9f08a39b0b94aef</uuid>
                             <expression>last(/Dell R630/systemStatePowerUnitStatusCombined,#1)&lt;&gt;3</expression>
                             <name>system State Power Unit Status Combined</name>
                             <priority>WARNING</priority>
+                            <description>This attribute defines the combined status
+ of all power units of this chassis.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -329,7 +304,6 @@
                             <uuid>7fc2d4151fbf435598e3dfed409ea116</uuid>
                             <expression>last(/Dell R630/systemStatePowerUnitStatusRedundancy,#1)&lt;&gt;3</expression>
                             <name>system State Power Unit Status Redundancy</name>
-                            <opdata>system State Power Unit Status Redundancy</opdata>
                             <priority>WARNING</priority>
                             <description>This attribute defines the combined redundancy status
  of all power units of this system.</description>
@@ -342,12 +316,16 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.4.200.10.1.50.1</snmp_oid>
                     <key>systemStateProcessorDeviceStatusCombined</key>
+                    <description>This attribute defines the combined status of all
+ processor devices of this system.</description>
                     <triggers>
                         <trigger>
                             <uuid>97bd88fe7d08404e9f785681aac04fc0</uuid>
                             <expression>last(/Dell R630/systemStateProcessorDeviceStatusCombined,#1)&lt;&gt;3</expression>
                             <name>system State Processor Device Status Combined</name>
                             <priority>WARNING</priority>
+                            <description>This attribute defines the combined status of all
+ processor devices of this system.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -357,12 +335,16 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.4.200.10.1.63.1</snmp_oid>
                     <key>systemStateTemperatureStatisticsStatusCombined</key>
+                    <description>This attribute defines the combined status of all
+ temperature statistics objects of this system.</description>
                     <triggers>
                         <trigger>
                             <uuid>7c932efed5244a22a40b3a814536e1d8</uuid>
                             <expression>last(/Dell R630/systemStateTemperatureStatisticsStatusCombined,#1)&lt;&gt;3</expression>
                             <name>system State Temperature Statistics Status Combined</name>
                             <priority>WARNING</priority>
+                            <description>This attribute defines the combined status of all
+ temperature statistics objects of this system.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -372,12 +354,16 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.4.200.10.1.24.1</snmp_oid>
                     <key>systemStateTemperatureStatusCombined</key>
+                    <description>This attribute defines the combined status of all
+ temperature probes of this system.</description>
                     <triggers>
                         <trigger>
                             <uuid>0392be954a11457082a8eefebd52cbe1</uuid>
                             <expression>last(/Dell R630/systemStateTemperatureStatusCombined,#1)&lt;&gt;3</expression>
                             <name>system State Temperature Status Combined</name>
                             <priority>WARNING</priority>
+                            <description>This attribute defines the combined status of all
+ temperature probes of this system.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -406,6 +392,7 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.140.1.1.23.1</snmp_oid>
                     <key>virtualDiskBadBlocksDetected</key>
+                    <description>Indicates whether the virtual disk has bad blocks.</description>
                     <valuemap>
                         <name>virtual Disk Bad Blocks Detected</name>
                     </valuemap>
@@ -414,7 +401,9 @@
                             <uuid>0376ae58920f4803adbed26d5f3afc3f</uuid>
                             <expression>last(/Dell R630/virtualDiskBadBlocksDetected,#1)=1</expression>
                             <name>virtual Disk Bad Blocks Detected</name>
+                            <opdata>Detected Bad blocks!!!</opdata>
                             <priority>WARNING</priority>
+                            <description>Indicates whether the virtual disk has bad blocks.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -424,33 +413,19 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.140.1.1.20.1</snmp_oid>
                     <key>virtualDiskComponentStatus</key>
+                    <description>The status of the virtual disk itself without the propagation of any contained component status. Possible values: 
+1: Other. 2: Unknown. 3: OK. 4: Non-critical . 5: Critical. 6: Non-recoverable.</description>
                     <valuemap>
                         <name>virtual Disk Component Status</name>
                     </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>23872a2b54c14803b68fd5b8edac3929</uuid>
-                            <expression>last(/Dell R630/virtualDiskComponentStatus,#1)=6</expression>
+                            <expression>last(/Dell R630/virtualDiskComponentStatus,#1)&lt;&gt;3</expression>
                             <name>virtual Disk Component Status</name>
-                            <priority>DISASTER</priority>
-                        </trigger>
-                        <trigger>
-                            <uuid>f65ae71121ef4ccf9d1afec575c30716</uuid>
-                            <expression>last(/Dell R630/virtualDiskComponentStatus,#1)=1 or last(/Dell R630/virtualDiskComponentStatus,#1)=2</expression>
-                            <name>virtual Disk Component Status 1-2</name>
-                            <priority>INFO</priority>
-                        </trigger>
-                        <trigger>
-                            <uuid>4e3e834263744ed5b20cca905367b7d0</uuid>
-                            <expression>last(/Dell R630/virtualDiskComponentStatus,#1)=4</expression>
-                            <name>virtual Disk Component Status 4</name>
                             <priority>WARNING</priority>
-                        </trigger>
-                        <trigger>
-                            <uuid>05de02fd37904a3a80d21a33fcf9e34e</uuid>
-                            <expression>last(/Dell R630/virtualDiskComponentStatus,#1)=5</expression>
-                            <name>virtual Disk Component Status 5</name>
-                            <priority>HIGH</priority>
+                            <description>The status of the virtual disk itself without the propagation of any contained component status. Possible values: 
+1: Other. 2: Unknown. 3: OK. 4: Non-critical . 5: Critical. 6: Non-recoverable.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -460,6 +435,11 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.140.1.1.4.1</snmp_oid>
                     <key>virtualDiskState</key>
+                    <description>The current state of this virtual disk (which includes any member physical disks.) Possible states: 
+ 1: The current state could not be determined. 
+ 2: The virtual disk is operating normally or optimally. 
+ 3: The virtual disk has encountered a failure. The data on disk is lost or is about to be lost. 
+ 4: The virtual disk encounterd a failure with one or all of the constituent redundant physical disks. The data on the virtual disk might no longer be fault tolerant.</description>
                     <valuemap>
                         <name>virtual Disk State</name>
                     </valuemap>
@@ -467,14 +447,13 @@
                         <trigger>
                             <uuid>1a22964d8e6d46168e431198712c875f</uuid>
                             <expression>last(/Dell R630/virtualDiskState,#1)=1</expression>
-                            <name>virtual Disk State 1</name>
+                            <name>virtual Disk State</name>
                             <priority>WARNING</priority>
-                        </trigger>
-                        <trigger>
-                            <uuid>acc437115ace48658867f494eae9b3ca</uuid>
-                            <expression>last(/Dell R630/virtualDiskState,#1)=3 or last(/Dell R630/virtualDiskState,#1)=4</expression>
-                            <name>virtualDiskState 3-4</name>
-                            <priority>HIGH</priority>
+                            <description>The current state of this virtual disk (which includes any member physical disks.) Possible states: 
+ 1: The current state could not be determined. 
+ 2: The virtual disk is operating normally or optimally. 
+ 3: The virtual disk has encountered a failure. The data on disk is lost or is about to be lost. 
+ 4: The virtual disk encounterd a failure with one or all of the constituent redundant physical disks. The data on the virtual disk might no longer be fault tolerant.</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -486,6 +465,8 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.24]</snmp_oid>
                     <key>physicalDiskComponentStatus</key>
+                    <description>The status of the physical disk itself without the propagation of any contained component status. Possible values: 
+ 1: Other 2: Unknown 3: OK 4: Non-critical 5: Critical 6: Non-recoverable</description>
                     <item_prototypes>
                         <item_prototype>
                             <uuid>739a9bde56d54e37b839a67fbe5699b7</uuid>
@@ -493,33 +474,19 @@
                             <type>SNMP_AGENT</type>
                             <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.24.{#SNMPINDEX}</snmp_oid>
                             <key>physicalDiskComponentStatus.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <description>The status of the physical disk itself without the propagation of any contained component status. Possible values: 
+ 1: Other 2: Unknown 3: OK 4: Non-critical 5: Critical 6: Non-recoverable</description>
                             <valuemap>
                                 <name>physical Disk Component Status</name>
                             </valuemap>
                             <trigger_prototypes>
                                 <trigger_prototype>
-                                    <uuid>a1238cf0d2894176b53b87d0f881713c</uuid>
-                                    <expression>last(/Dell R630/physicalDiskComponentStatus.[&quot;{#SNMPINDEX}&quot;],#1)=1 or last(/Dell R630/physicalDiskComponentStatus.[&quot;{#SNMPINDEX}&quot;],#1)=2</expression>
-                                    <name>Physical Disk Component Status 1-2</name>
-                                    <priority>INFO</priority>
-                                </trigger_prototype>
-                                <trigger_prototype>
                                     <uuid>244ddcfd35644bf08bd76a6f00c96df4</uuid>
-                                    <expression>last(/Dell R630/physicalDiskComponentStatus.[&quot;{#SNMPINDEX}&quot;],#1)=4</expression>
-                                    <name>Physical Disk Component Status 4</name>
+                                    <expression>last(/Dell R630/physicalDiskComponentStatus.[&quot;{#SNMPINDEX}&quot;],#1)&lt;&gt;3</expression>
+                                    <name>Physical Disk Component Status</name>
                                     <priority>WARNING</priority>
-                                </trigger_prototype>
-                                <trigger_prototype>
-                                    <uuid>0e7e7e2536ce457ea5850c8aec49db1d</uuid>
-                                    <expression>last(/Dell R630/physicalDiskComponentStatus.[&quot;{#SNMPINDEX}&quot;],#1)=5</expression>
-                                    <name>Physical Disk Component Status 5</name>
-                                    <priority>HIGH</priority>
-                                </trigger_prototype>
-                                <trigger_prototype>
-                                    <uuid>a6d7aa7c7ee74d9a9cb8f09f0fa8934e</uuid>
-                                    <expression>last(/Dell R630/physicalDiskComponentStatus.[&quot;{#SNMPINDEX}&quot;],#1)=6</expression>
-                                    <name>Physical Disk Component Status 6</name>
-                                    <priority>DISASTER</priority>
+                                    <description>The status of the physical disk itself without the propagation of any contained component status. Possible values: 
+ 1: Other 2: Unknown 3: OK 4: Non-critical 5: Critical 6: Non-recoverable</description>
                                 </trigger_prototype>
                             </trigger_prototypes>
                         </item_prototype>
@@ -531,6 +498,12 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.42]</snmp_oid>
                     <key>physicalDiskPowerState</key>
+                    <description>The power state of the physical disk. Possible Values: 
+1: Not one of the following. 
+2: The physical disk is in the spun up state. 
+3: The physical disk is in the spun down state. 
+4: The physical disk is changing from spun down state to spun up state or vice versa. 
+5: The Solid State Device (SSD) is powered on.</description>
                     <item_prototypes>
                         <item_prototype>
                             <uuid>d9ec1a17fd254a148908cd9998c8b066</uuid>
@@ -538,6 +511,12 @@
                             <type>SNMP_AGENT</type>
                             <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.42.{#SNMPINDEX}</snmp_oid>
                             <key>physicalDiskPowerState.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <description>The power state of the physical disk. Possible Values: 
+1: Not one of the following. 
+2: The physical disk is in the spun up state. 
+3: The physical disk is in the spun down state. 
+4: The physical disk is changing from spun down state to spun up state or vice versa. 
+5: The Solid State Device (SSD) is powered on.</description>
                             <valuemap>
                                 <name>physical Disk Power State</name>
                             </valuemap>
@@ -547,6 +526,12 @@
                                     <expression>last(/Dell R630/physicalDiskPowerState.[&quot;{#SNMPINDEX}&quot;],#1)=1 or last(/Dell R630/physicalDiskPowerState.[&quot;{#SNMPINDEX}&quot;],#1)=3 or last(/Dell R630/physicalDiskPowerState.[&quot;{#SNMPINDEX}&quot;],#1)=4</expression>
                                     <name>physical Disk Power State</name>
                                     <priority>WARNING</priority>
+                                    <description>The power state of the physical disk. Possible Values: 
+1: Not one of the following. 
+2: The physical disk is in the spun up state. 
+3: The physical disk is in the spun down state. 
+4: The physical disk is changing from spun down state to spun up state or vice versa. 
+5: The Solid State Device (SSD) is powered on.</description>
                                 </trigger_prototype>
                             </trigger_prototypes>
                         </item_prototype>
@@ -558,6 +543,7 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.31]</snmp_oid>
                     <key>physicalDiskSmartAlertIndication</key>
+                    <description>Indicates whether the physical disk has received a predictive failure alert.</description>
                     <item_prototypes>
                         <item_prototype>
                             <uuid>828bbf3b45d342378d251703a70bbe28</uuid>
@@ -565,6 +551,7 @@
                             <type>SNMP_AGENT</type>
                             <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.31.{#SNMPINDEX}</snmp_oid>
                             <key>physicalDiskSmartAlertIndication.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <description>Indicates whether the physical disk has received a predictive failure alert.</description>
                             <valuemap>
                                 <name>physical Disk Smart Alert Indication</name>
                             </valuemap>
@@ -573,7 +560,9 @@
                                     <uuid>62f9234610344427af21afe119c8ece5</uuid>
                                     <expression>last(/Dell R630/physicalDiskSmartAlertIndication.[&quot;{#SNMPINDEX}&quot;],#1)=1</expression>
                                     <name>physical Disk Smart Alert Indication</name>
+                                    <opdata>physical Disk Smart Alert!!!</opdata>
                                     <priority>HIGH</priority>
+                                    <description>Indicates whether the physical disk has received a predictive failure alert.</description>
                                 </trigger_prototype>
                             </trigger_prototypes>
                         </item_prototype>
@@ -585,6 +574,17 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.4]</snmp_oid>
                     <key>physicalDiskState</key>
+                    <description>The current state of this physical disk. Possible states: 
+ 1: The current state could not be determined. 
+ 2: The physical disk is available for use, but no RAID configuration has been assigned. 
+ 3: A RAID configuration has been assigned to the physical disk. 
+ 4: The physical disk has been moved from another controller and contains all or some portion of a virtual disk. 
+ 5: The physical disk is not available to the RAID controller. 
+ 6: The physical disk is currently blocked by controller. 
+ 7: The physical disk is not operational. 
+ 8: The physical disk is not a RAID capable disk 
+ 9: The physical disk has been removed. 
+ 10:The physical disk media has been placed in read only mode.</description>
                     <item_prototypes>
                         <item_prototype>
                             <uuid>77791bf769784f4abe1f2bb70e2a13ba</uuid>
@@ -592,20 +592,34 @@
                             <type>SNMP_AGENT</type>
                             <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.4.1.4.{#SNMPINDEX}</snmp_oid>
                             <key>physicalDiskState.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <description>The current state of this physical disk. Possible states: 
+ 1: The current state could not be determined. 
+ 2: The physical disk is available for use, but no RAID configuration has been assigned. 
+ 3: A RAID configuration has been assigned to the physical disk. 
+ 4: The physical disk has been moved from another controller and contains all or some portion of a virtual disk. 
+ 5: The physical disk is not available to the RAID controller. 
+ 6: The physical disk is currently blocked by controller. 
+ 7: The physical disk is not operational. 
+ 8: The physical disk is not a RAID capable disk 
+ 9: The physical disk has been removed. 
+ 10:The physical disk media has been placed in read only mode.</description>
                             <trigger_prototypes>
                                 <trigger_prototype>
-                                    <uuid>36da736936154b7db03cbc2286f3e892</uuid>
-                                    <expression>last(/Dell R630/physicalDiskState.[&quot;{#SNMPINDEX}&quot;],#1)=1</expression>
-                                    <name>Physical Disk State</name>
-                                    <priority>INFO</priority>
-                                    <description>State Physical Disk 
-unknown ( 1 )</description>
-                                </trigger_prototype>
-                                <trigger_prototype>
                                     <uuid>2f840ff75bce4fa18238a3807be0bf47</uuid>
-                                    <expression>last(/Dell R630/physicalDiskState.[&quot;{#SNMPINDEX}&quot;],#1)=5 or last(/Dell R630/physicalDiskState.[&quot;{#SNMPINDEX}&quot;],#1)=6 or last(/Dell R630/physicalDiskState.[&quot;{#SNMPINDEX}&quot;],#1)=7 or last(/Dell R630/physicalDiskState.[&quot;{#SNMPINDEX}&quot;],#1)=8 or last(/Dell R630/physicalDiskState.[&quot;{#SNMPINDEX}&quot;],#1)=9 or last(/Dell R630/physicalDiskState.[&quot;{#SNMPINDEX}&quot;],#1)=10</expression>
+                                    <expression>last(/Dell R630/physicalDiskState.[&quot;{#SNMPINDEX}&quot;],#1)&lt;&gt;3</expression>
                                     <name>Physical Disk State</name>
-                                    <priority>HIGH</priority>
+                                    <priority>WARNING</priority>
+                                    <description>The current state of this physical disk. Possible states: 
+ 1: The current state could not be determined. 
+ 2: The physical disk is available for use, but no RAID configuration has been assigned. 
+ 3: A RAID configuration has been assigned to the physical disk. 
+ 4: The physical disk has been moved from another controller and contains all or some portion of a virtual disk. 
+ 5: The physical disk is not available to the RAID controller. 
+ 6: The physical disk is currently blocked by controller. 
+ 7: The physical disk is not operational. 
+ 8: The physical disk is not a RAID capable disk 
+ 9: The physical disk has been removed. 
+ 10:The physical disk media has been placed in read only mode.</description>
                                 </trigger_prototype>
                             </trigger_prototypes>
                         </item_prototype>
