@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T06:22:21Z</date>
+    <date>2022-12-13T06:28:03Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -177,6 +177,32 @@
                     <valuemap>
                         <name>virtual Disk Component Status</name>
                     </valuemap>
+                    <triggers>
+                        <trigger>
+                            <uuid>23872a2b54c14803b68fd5b8edac3929</uuid>
+                            <expression>last(/Dell R630/virtualDiskComponentStatus,#1)=6</expression>
+                            <name>virtual Disk Component Status</name>
+                            <priority>DISASTER</priority>
+                        </trigger>
+                        <trigger>
+                            <uuid>f65ae71121ef4ccf9d1afec575c30716</uuid>
+                            <expression>last(/Dell R630/virtualDiskComponentStatus,#1)=1 or last(/Dell R630/virtualDiskComponentStatus,#1)=2</expression>
+                            <name>virtual Disk Component Status 1-2</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                        <trigger>
+                            <uuid>4e3e834263744ed5b20cca905367b7d0</uuid>
+                            <expression>last(/Dell R630/virtualDiskComponentStatus,#1)=4</expression>
+                            <name>virtual Disk Component Status 4</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                        <trigger>
+                            <uuid>05de02fd37904a3a80d21a33fcf9e34e</uuid>
+                            <expression>last(/Dell R630/virtualDiskComponentStatus,#1)=5</expression>
+                            <name>virtual Disk Component Status 5</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <uuid>151b74925f8d495c9932c9f294355a67</uuid>

@@ -45,6 +45,11 @@ Triggers
 9) virtual Disk State
 	Warning: 1
 	High: 3, 4
+10) virtual Disk Component Status
+	Information: 1, 2
+	Warning: 4
+	High: 5
+	Disaster: 6
 Discovery
 1) physical Disk State
 2) physical Disk Component Status
