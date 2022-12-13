@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T05:53:46Z</date>
+    <date>2022-12-13T05:58:46Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -26,6 +26,20 @@
                     <type>SNMP_AGENT</type>
                     <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.15.1.4.1</snmp_oid>
                     <key>batteryState</key>
+                    <triggers>
+                        <trigger>
+                            <uuid>28f88dce285346f1bf59b68957c64c13</uuid>
+                            <expression>last(/Dell R630/batteryState,#1)=1 or last(/Dell R630/batteryState,#1)=3 or last(/Dell R630/batteryState,#1)=4 or last(/Dell R630/batteryState,#1)=5 or last(/Dell R630/batteryState,#1)=7</expression>
+                            <name>battery State</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                        <trigger>
+                            <uuid>99e7753b54794f1482353b4aeade11f9</uuid>
+                            <expression>last(/Dell R630/batteryState,#1)=6</expression>
+                            <name>battery State 6</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
                 </item>
                 <item>
                     <uuid>4adfe16949664975bb175c8dabc7470a</uuid>

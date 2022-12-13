@@ -31,6 +31,9 @@ Triggers
 5) physical Disk Smart Alert Indication
 6) physical Disk Power State
 	Warning: 1, 3, 4
+7) battery State
+	Information: 6
+	Warning: 1, 3, 4, 5, 7
 Discovery
 1) physical Disk State
 2) physical Disk Component Status
