@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T08:50:17Z</date>
+    <date>2022-12-13T08:53:48Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -603,6 +603,9 @@
  8: The physical disk is not a RAID capable disk 
  9: The physical disk has been removed. 
  10:The physical disk media has been placed in read only mode.</description>
+                            <valuemap>
+                                <name>physical Disk State</name>
+                            </valuemap>
                             <trigger_prototypes>
                                 <trigger_prototype>
                                     <uuid>2f840ff75bce4fa18238a3807be0bf47</uuid>
@@ -824,6 +827,52 @@
                         <mapping>
                             <value>1</value>
                             <newvalue>Error</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>2e86c6fdfe2548a9a7b586bd048f7c0b</uuid>
+                    <name>physical Disk State</name>
+                    <mappings>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>unknown</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>2</value>
+                            <newvalue>ready</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>online</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>4</value>
+                            <newvalue>foreign</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>5</value>
+                            <newvalue>offline</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>6</value>
+                            <newvalue>blocked</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>7</value>
+                            <newvalue>failed</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>8</value>
+                            <newvalue>nonraid</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>9</value>
+                            <newvalue>removed</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>10</value>
+                            <newvalue>readonly</newvalue>
                         </mapping>
                     </mappings>
                 </valuemap>
