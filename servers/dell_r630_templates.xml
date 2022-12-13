@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T05:34:52Z</date>
+    <date>2022-12-13T05:37:12Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -171,6 +171,14 @@
                             <valuemap>
                                 <name>physical Disk Smart Alert Indication</name>
                             </valuemap>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <uuid>62f9234610344427af21afe119c8ece5</uuid>
+                                    <expression>last(/Dell R630/physicalDiskSmartAlertIndication.[&quot;{#SNMPINDEX}&quot;],#1)=1</expression>
+                                    <name>physical Disk Smart Alert Indication</name>
+                                    <priority>HIGH</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                     </item_prototypes>
                 </discovery_rule>
