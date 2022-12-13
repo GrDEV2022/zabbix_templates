@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T06:28:03Z</date>
+    <date>2022-12-13T06:35:06Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -167,6 +167,16 @@
 6: Non-recoverable.</description>
                         </trigger>
                     </triggers>
+                </item>
+                <item>
+                    <uuid>55dba25c4521427ba236c1458b8d8e7b</uuid>
+                    <name>virtual Disk Bad Blocks Detected</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.140.1.1.23.1</snmp_oid>
+                    <key>virtualDiskBadBlocksDetected</key>
+                    <valuemap>
+                        <name>virtual Disk Bad Blocks Detected</name>
+                    </valuemap>
                 </item>
                 <item>
                     <uuid>a7f4c58047d64cecbe50c9295e56e9da</uuid>
@@ -552,6 +562,20 @@ unknown ( 1 )</description>
                 <valuemap>
                     <uuid>b516fb4b91b7427aae565ee50660edf3</uuid>
                     <name>physical Disk Smart Alert Indication</name>
+                    <mappings>
+                        <mapping>
+                            <value>0</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>Error</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>ce689d2fd32a413583f4d910e8759f91</uuid>
+                    <name>virtual Disk Bad Blocks Detected</name>
                     <mappings>
                         <mapping>
                             <value>0</value>
