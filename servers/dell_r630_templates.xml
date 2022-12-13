@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T13:13:42Z</date>
+    <date>2022-12-13T13:36:01Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -128,6 +128,9 @@
                     <key>systemStateAmperageStatusCombined</key>
                     <description>This attribute defines the combined status of all
  amperage probes of this system.</description>
+                    <valuemap>
+                        <name>systemStateAmperageStatusCombined</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>598bfbdd860643f7b028fab690004a94</uuid>
@@ -147,6 +150,9 @@
                     <key>systemStateBatteryStatusCombined</key>
                     <description>This attribute defines the combined status of all
  batteries of this system.</description>
+                    <valuemap>
+                        <name>systemStateBatteryStatusCombined</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>a449472514a840f5b852b9815e6a83ee</uuid>
@@ -166,6 +172,9 @@
                     <key>systemStateChassisIntrusionStatusCombined</key>
                     <description>This attribute defines the combined status of all
  intrusion detection devices of this system chassis.</description>
+                    <valuemap>
+                        <name>systemStateChassisIntrusionStatusCombined</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>02fc3dc98fa7433a898e6c112c17af6a</uuid>
@@ -185,6 +194,9 @@
                     <key>systemStateCoolingDeviceStatusCombined</key>
                     <description>This attribute defines the combined status of all
  cooling devices of this system.</description>
+                    <valuemap>
+                        <name>systemStateCoolingDeviceStatusCombined</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>56de5205de5049218d868484286e650d</uuid>
@@ -204,6 +216,9 @@
                     <key>systemStateCoolingUnitStatusCombined</key>
                     <description>This attribute defines the combined status
  of all cooling units of this system.</description>
+                    <valuemap>
+                        <name>systemStateCoolingUnitStatusCombined</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>14a51c69f8ee4a60b77237066fdbc202</uuid>
@@ -223,6 +238,9 @@
                     <key>systemStateCoolingUnitStatusRedundancy</key>
                     <description>This attribute defines the combined redundancy status
  of all cooling units of this system.</description>
+                    <valuemap>
+                        <name>systemStateCoolingUnitStatusRedundancy</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>6a1a397749ef4a8e96c94cc10d7040f7</uuid>
@@ -242,6 +260,9 @@
                     <key>systemStateMemoryDeviceStatusCombined</key>
                     <description>This attribute defines the combined status of all
  memory devices of this system.</description>
+                    <valuemap>
+                        <name>systemStateMemoryDeviceStatusCombined</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>7f0e8b003b064f668cf695feba4396f6</uuid>
@@ -261,6 +282,9 @@
                     <key>systemStatePowerSupplyStatusCombined</key>
                     <description>This attribute defines the combined status of all
  power supplies of this system.</description>
+                    <valuemap>
+                        <name>systemStatePowerSupplyStatusCombined</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>724f425d35ef4f43bc6d86f2434e0689</uuid>
@@ -280,6 +304,9 @@
                     <key>systemStatePowerUnitStatusCombined</key>
                     <description>This attribute defines the combined status
  of all power units of this chassis.</description>
+                    <valuemap>
+                        <name>systemStatePowerUnitStatusCombined</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>7788bd5953bc469cb9f08a39b0b94aef</uuid>
@@ -299,6 +326,9 @@
                     <key>systemStatePowerUnitStatusRedundancy</key>
                     <description>This attribute defines the combined redundancy status
  of all power units of this system.</description>
+                    <valuemap>
+                        <name>systemStatePowerUnitStatusRedundancy</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>7fc2d4151fbf435598e3dfed409ea116</uuid>
@@ -318,6 +348,9 @@
                     <key>systemStateProcessorDeviceStatusCombined</key>
                     <description>This attribute defines the combined status of all
  processor devices of this system.</description>
+                    <valuemap>
+                        <name>systemStateProcessorDeviceStatusCombined</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>97bd88fe7d08404e9f785681aac04fc0</uuid>
@@ -337,6 +370,9 @@
                     <key>systemStateTemperatureStatisticsStatusCombined</key>
                     <description>This attribute defines the combined status of all
  temperature statistics objects of this system.</description>
+                    <valuemap>
+                        <name>systemStateTemperatureStatisticsStatusCombined</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>7c932efed5244a22a40b3a814536e1d8</uuid>
@@ -356,6 +392,9 @@
                     <key>systemStateTemperatureStatusCombined</key>
                     <description>This attribute defines the combined status of all
  temperature probes of this system.</description>
+                    <valuemap>
+                        <name>systemStateTemperatureStatusCombined</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>0392be954a11457082a8eefebd52cbe1</uuid>
@@ -375,6 +414,9 @@
                     <key>systemStateVoltageStatusCombined</key>
                     <description>This attribute defines the combined status of all
  voltage probes of this system.</description>
+                    <valuemap>
+                        <name>systemStateVoltageStatusCombined</name>
+                    </valuemap>
                     <triggers>
                         <trigger>
                             <uuid>df2b4d392b434406977cf548414d5dc2</uuid>
@@ -890,6 +932,146 @@
                         <mapping>
                             <value>10</value>
                             <newvalue>readonly</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>508e1fdc2a71471f81ed2fda0c3445f6</uuid>
+                    <name>systemStateAmperageStatusCombined</name>
+                    <mappings>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>c3c8aca129b5402b90dd4367f478d850</uuid>
+                    <name>systemStateBatteryStatusCombined</name>
+                    <mappings>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>dd39912cbd7746dfb354feda3bb9bec3</uuid>
+                    <name>systemStateChassisIntrusionStatusCombined</name>
+                    <mappings>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>35f3d5077ce74bb3af39485fd60fba2e</uuid>
+                    <name>systemStateCoolingDeviceStatusCombined</name>
+                    <mappings>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>43d7da975100454094673e8f90312953</uuid>
+                    <name>systemStateCoolingUnitStatusCombined</name>
+                    <mappings>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>4c043156511d4578b7216174692cfd97</uuid>
+                    <name>systemStateCoolingUnitStatusRedundancy</name>
+                    <mappings>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>6158beb4105b4cffb93a674ab5f53e8c</uuid>
+                    <name>systemStateMemoryDeviceStatusCombined</name>
+                    <mappings>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>1f6a93e8aebd43eb99b5fef1865fb739</uuid>
+                    <name>systemStatePowerSupplyStatusCombined</name>
+                    <mappings>
+                        <mapping>
+                            <value>5</value>
+                            <newvalue>critical</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>ad49ae97a9714d74923ca2f1ff703d7c</uuid>
+                    <name>systemStatePowerUnitStatusCombined</name>
+                    <mappings>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>other</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>8d0a88109d72435f907d5d85d4e0e70e</uuid>
+                    <name>systemStatePowerUnitStatusRedundancy</name>
+                    <mappings>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>other</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>8f707c7b37a942248f7ca302e8508cc2</uuid>
+                    <name>systemStateProcessorDeviceStatusCombined</name>
+                    <mappings>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>0565ea6b53984c8dbe22e320ff156d82</uuid>
+                    <name>systemStateTemperatureStatisticsStatusCombined</name>
+                    <mappings>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>861b1beb750f47d7944db81f5fa2d1e5</uuid>
+                    <name>systemStateTemperatureStatusCombined</name>
+                    <mappings>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>3c06cdb2899e465e9773e86ca2ce12d4</uuid>
+                    <name>systemStateVoltageStatusCombined</name>
+                    <mappings>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
                         </mapping>
                     </mappings>
                 </valuemap>
