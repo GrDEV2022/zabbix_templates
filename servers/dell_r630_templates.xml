@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T06:18:10Z</date>
+    <date>2022-12-13T06:22:21Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -167,6 +167,16 @@
 6: Non-recoverable.</description>
                         </trigger>
                     </triggers>
+                </item>
+                <item>
+                    <uuid>a7f4c58047d64cecbe50c9295e56e9da</uuid>
+                    <name>virtual Disk Component Status</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.140.1.1.20.1</snmp_oid>
+                    <key>virtualDiskComponentStatus</key>
+                    <valuemap>
+                        <name>virtual Disk Component Status</name>
+                    </valuemap>
                 </item>
                 <item>
                     <uuid>151b74925f8d495c9932c9f294355a67</uuid>
@@ -524,6 +534,36 @@ unknown ( 1 )</description>
                         <mapping>
                             <value>1</value>
                             <newvalue>Error</newvalue>
+                        </mapping>
+                    </mappings>
+                </valuemap>
+                <valuemap>
+                    <uuid>85a798a5348f4483a4480b033a9a8b18</uuid>
+                    <name>virtual Disk Component Status</name>
+                    <mappings>
+                        <mapping>
+                            <value>1</value>
+                            <newvalue>Other</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>2</value>
+                            <newvalue>Unknown</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>4</value>
+                            <newvalue>Non-critical</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>5</value>
+                            <newvalue>Critical</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>6</value>
+                            <newvalue>Non-recoverable</newvalue>
                         </mapping>
                     </mappings>
                 </valuemap>

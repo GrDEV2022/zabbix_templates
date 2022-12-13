@@ -13,6 +13,7 @@ Monitoring
 7) battery State
 8) battery Component Status
 9) virtual Disk State
+10) virtual Disk Component Status
 Triggers
 1) controller Roll Up Status
 	Information: 1, 2
