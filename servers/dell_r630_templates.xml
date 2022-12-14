@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-13T13:46:38Z</date>
+    <date>2022-12-14T12:41:43Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -1012,6 +1012,10 @@
                         <mapping>
                             <value>5</value>
                             <newvalue>critical</newvalue>
+                        </mapping>
+                        <mapping>
+                            <value>3</value>
+                            <newvalue>OK</newvalue>
                         </mapping>
                     </mappings>
                 </valuemap>
