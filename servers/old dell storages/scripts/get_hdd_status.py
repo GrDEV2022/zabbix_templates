@@ -61,3 +61,5 @@ if len(sys.argv) == 3:
         if id_hdd in js['data'][yy]['ID']:
             if data_hdd == 'Status':
                 print(js['data'][yy]['Status'])
+            if data_hdd == 'State':
+                print(js['data'][yy]['State'])

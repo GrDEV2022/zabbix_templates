@@ -6,3 +6,7 @@ Requirements
 - Installed Dell EMC Server Administrator
 Monitoring
 - Disk Status
+- Disk State
+
+TODO:
+- Need add Trigger for Disk State
