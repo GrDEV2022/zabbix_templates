@@ -60,6 +60,7 @@ Discovery
 2) physical Disk Component Status
 3) physical Disk Smart Alert Indication
 4) physical Disk Power State
+5) controller Roll Up Status
 
 - Old Dell servers with Dell EMC Server Administrator
 Monitoring
