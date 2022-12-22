@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.2</version>
+    <date>2022-12-22T16:08:43Z</date>
+    <template_groups>
+        <template_group>
+            <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
+            <name>custom_templates</name>
+        </template_group>
+    </template_groups>
+    <templates>
+        <template>
+            <uuid>dfa0f292ece845cfa69dec8686b43669</uuid>
+            <template>Dell R710</template>
+            <name>Dell R710</name>
+            <groups>
+                <group>
+                    <name>custom_templates</name>
+                </group>
+            </groups>
+            <discovery_rules>
+                <discovery_rule>
+                    <uuid>5e977696151942b1ab71382d6472c00f</uuid>
+                    <name>Disk Status</name>
+                    <key>hdd.status</key>
+                    <item_prototypes>
+                        <item_prototype>
+                            <uuid>26a498921d104d6f9aafb22b7fc280e0</uuid>
+                            <name>Disc Status - {#NAME}</name>
+                            <key>hdd.status[{#ID},Status]</key>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                        </item_prototype>
+                    </item_prototypes>
+                    <lld_macro_paths>
+                        <lld_macro_path>
+                            <lld_macro>{#ID}</lld_macro>
+                            <path>$.ID</path>
+                        </lld_macro_path>
+                        <lld_macro_path>
+                            <lld_macro>{#NAME}</lld_macro>
+                            <path>$.Name</path>
+                        </lld_macro_path>
+                        <lld_macro_path>
+                            <lld_macro>{#STATUS}</lld_macro>
+                            <path>$.Status</path>
+                        </lld_macro_path>
+                    </lld_macro_paths>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <parameters>
+                                <parameter>$.data</parameter>
+                            </parameters>
+                        </step>
+                    </preprocessing>
+                </discovery_rule>
+            </discovery_rules>
+        </template>
+    </templates>
+</zabbix_export>
