@@ -60,3 +60,12 @@ Discovery
 2) physical Disk Component Status
 3) physical Disk Smart Alert Indication
 4) physical Disk Power State
+
+- Old Dell servers with Dell EMC Server Administrator
+Monitoring
+1) Physical Disk Status
+2) Physical Disk State
+2) Physical Disk Power Status
+Triggers
+Discovery
+
