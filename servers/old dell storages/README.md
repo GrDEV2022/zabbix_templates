@@ -4,3 +4,5 @@ Requirements
 - Python 3.x
 - zabbix_agent
 - Installed Dell EMC Server Administrator
+Monitoring
+- Disk Status

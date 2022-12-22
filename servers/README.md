@@ -68,4 +68,4 @@ Monitoring
 2) Physical Disk Power Status
 Triggers
 Discovery
-
+1) Physical Disk Status

@@ -1,5 +1,6 @@
 import re
 import sys
+import json
 import subprocess
 
 cmd = "omreport storage pdisk controller=0"
@@ -50,4 +51,13 @@ for i in range(el):
     jsd['Power Status'] = getMatchPowerStatus()[i].split(":", 1)[1].lstrip()
     js['data'].append(jsd)
 
-print(json.dumps(js))
+if len(sys.argv) == 1:
+    print(json.dumps(js))
+
+if len(sys.argv) == 3:
+    id_hdd = sys.argv[1]
+    data_hdd = sys.argv[2]
+    for yy in range(el):
+        if id_hdd in js['data'][yy]['ID']:
+            if data_hdd == 'Status':
+                print(js['data'][yy]['Status'])
