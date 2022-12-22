@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-22T16:27:31Z</date>
+    <date>2022-12-22T22:45:45Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -21,26 +21,33 @@
             <discovery_rules>
                 <discovery_rule>
                     <uuid>5e977696151942b1ab71382d6472c00f</uuid>
-                    <name>Disk Status</name>
-                    <key>hdd.status</key>
+                    <name>Physical Disk Status</name>
+                    <key>hdd.discovery</key>
                     <item_prototypes>
                         <item_prototype>
+                            <uuid>3f28b1b1c8f846b6b7d4457aa3a673e5</uuid>
+                            <name>Physical Power Status - {#NAME}</name>
+                            <key>hdd.status[{#ID},&quot;Power Status&quot;]</key>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                        </item_prototype>
+                        <item_prototype>
                             <uuid>570949e5be2744de8b51a9d99d11d916</uuid>
-                            <name>Disk State - {#NAME}</name>
-                            <key>hdd.status[{#ID},State]</key>
+                            <name>Physical Disk State - {#NAME}</name>
+                            <key>hdd.status[{#ID},&quot;State&quot;]</key>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                         </item_prototype>
                         <item_prototype>
                             <uuid>26a498921d104d6f9aafb22b7fc280e0</uuid>
-                            <name>Disk Status - {#NAME}</name>
-                            <key>hdd.status[{#ID},Status]</key>
+                            <name>Physical Disk Status - {#NAME}</name>
+                            <key>hdd.status[{#ID},&quot;Status&quot;]</key>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
                             <trigger_prototypes>
                                 <trigger_prototype>
                                     <uuid>4f73a4f1532f443cb33e53757bc69559</uuid>
-                                    <expression>last(/Dell R710/hdd.status[{#ID},Status],#1)&lt;&gt;&quot;Ok&quot;</expression>
+                                    <expression>last(/Dell R710/hdd.status[{#ID},&quot;Status&quot;],#1)&lt;&gt;&quot;Ok&quot;</expression>
                                     <name>Disk Status</name>
                                     <priority>HIGH</priority>
                                 </trigger_prototype>

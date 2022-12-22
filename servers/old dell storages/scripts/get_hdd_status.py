@@ -63,3 +63,5 @@ if len(sys.argv) == 3:
                 print(js['data'][yy]['Status'])
             if data_hdd == 'State':
                 print(js['data'][yy]['State'])
+            if data_hdd == 'Power Status':
+                print(js['data'][yy]['Power Status'])

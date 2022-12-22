@@ -7,6 +7,8 @@ Requirements
 Monitoring
 - Disk Status
 - Disk State
+- Disk Power Status
 
 TODO:
 - Need add Trigger for Disk State
+- Need add Trigger for Disk Power Status
