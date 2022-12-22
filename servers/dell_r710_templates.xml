@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-22T16:08:43Z</date>
+    <date>2022-12-22T16:14:21Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -30,6 +30,14 @@
                             <key>hdd.status[{#ID},Status]</key>
                             <trends>0</trends>
                             <value_type>CHAR</value_type>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <uuid>4f73a4f1532f443cb33e53757bc69559</uuid>
+                                    <expression>last(/Dell R710/hdd.status[{#ID},Status],#1)&lt;&gt;&quot;Ok&quot;</expression>
+                                    <name>Disk Status</name>
+                                    <priority>HIGH</priority>
+                                </trigger_prototype>
+                            </trigger_prototypes>
                         </item_prototype>
                     </item_prototypes>
                     <lld_macro_paths>
