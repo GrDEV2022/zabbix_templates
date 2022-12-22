@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2022-12-22T23:17:30Z</date>
+    <date>2022-12-22T23:28:23Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -73,28 +73,6 @@
  5: The battery is missing or not detected. 
  6: The battery is undergoing the re-charge phase. 
  7: The battery voltage or charge level is below the threshold.</description>
-                        </trigger>
-                    </triggers>
-                </item>
-                <item>
-                    <uuid>4adfe16949664975bb175c8dabc7470a</uuid>
-                    <name>controller Component Status</name>
-                    <type>SNMP_AGENT</type>
-                    <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.38.1</snmp_oid>
-                    <key>controllerComponentStatus</key>
-                    <description>The status of the controller itself without the propagation of any contained component status. Possible values: 
- 1: Other 2: Unknown 3: OK 4: Non-critical 5: Critical 6: Non-recoverable</description>
-                    <valuemap>
-                        <name>controller Component Status</name>
-                    </valuemap>
-                    <triggers>
-                        <trigger>
-                            <uuid>d7e5247f9c60488096af73e344de82f8</uuid>
-                            <expression>last(/Dell R630/controllerComponentStatus,#1)&lt;&gt;3</expression>
-                            <name>controller Component Status</name>
-                            <priority>WARNING</priority>
-                            <description>The status of the controller itself without the propagation of any contained component status. Possible values: 
- 1: Other 2: Unknown 3: OK 4: Non-critical 5: Critical 6: Non-recoverable</description>
                         </trigger>
                     </triggers>
                 </item>
@@ -479,6 +457,39 @@
                 </item>
             </items>
             <discovery_rules>
+                <discovery_rule>
+                    <uuid>c95f297675874f83b923e8fe1787d57d</uuid>
+                    <name>controller Component Status</name>
+                    <type>SNMP_AGENT</type>
+                    <snmp_oid>discovery[{#SNMPVALUE},.1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.38]</snmp_oid>
+                    <key>controllerComponentStatus</key>
+                    <description>The status of the controller itself without the propagation of any contained component status. Possible values: 
+ 1: Other 2: Unknown 3: OK 4: Non-critical 5: Critical 6: Non-recoverable</description>
+                    <item_prototypes>
+                        <item_prototype>
+                            <uuid>5327d1491a204df99e2504e730f6f515</uuid>
+                            <name>controller Component Status - {#SNMPINDEX}</name>
+                            <type>SNMP_AGENT</type>
+                            <snmp_oid>.1.3.6.1.4.1.674.10892.5.5.1.20.130.1.1.38.[&quot;{#SNMPINDEX}&quot;]</snmp_oid>
+                            <key>controllerComponentStatus.[&quot;{#SNMPINDEX}&quot;]</key>
+                            <description>The status of the controller itself without the propagation of any contained component status. Possible values: 
+ 1: Other 2: Unknown 3: OK 4: Non-critical 5: Critical 6: Non-recoverable</description>
+                            <valuemap>
+                                <name>controller Component Status</name>
+                            </valuemap>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <uuid>78ea4ead47544a9ca00f79d4749434d3</uuid>
+                                    <expression>last(/Dell R630/controllerComponentStatus.[&quot;{#SNMPINDEX}&quot;],#1)&lt;&gt;3</expression>
+                                    <name>controller Component Status</name>
+                                    <priority>WARNING</priority>
+                                    <description>The status of the controller itself without the propagation of any contained component status. Possible values: 
+ 1: Other 2: Unknown 3: OK 4: Non-critical 5: Critical 6: Non-recoverable</description>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                    </item_prototypes>
+                </discovery_rule>
                 <discovery_rule>
                     <uuid>3d5223edb71b454a932563d0384a040d</uuid>
                     <name>controller Roll Up Status</name>
