@@ -8,6 +8,8 @@ Monitoring
 - Disk Status
 - Disk State
 - Disk Power Status
+Triggers
+- Disk Status
 
 TODO:
 - Need add Trigger for Disk State

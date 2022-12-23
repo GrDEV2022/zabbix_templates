@@ -68,5 +68,8 @@ Monitoring
 2) Physical Disk State
 2) Physical Disk Power Status
 Triggers
+1) Physical Disk Status
 Discovery
 1) Physical Disk Status
+2) Physical Disk State
+2) Physical Disk Power Status
