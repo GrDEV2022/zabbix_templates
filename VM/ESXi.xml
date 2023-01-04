@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.2</version>
+    <date>2023-01-04T12:08:37Z</date>
+    <template_groups>
+        <template_group>
+            <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
+            <name>custom_templates</name>
+        </template_group>
+    </template_groups>
+    <templates>
+        <template>
+            <uuid>61b8363073ac45db925a2dbb5a65fc4e</uuid>
+            <template>ESXi</template>
+            <name>ESXi</name>
+            <groups>
+                <group>
+                    <name>custom_templates</name>
+                </group>
+            </groups>
+            <discovery_rules>
+                <discovery_rule>
+                    <uuid>0fcc85855a1f46ac95b073383b2fbf4d</uuid>
+                    <name>Datastore discovery</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.datastore.discovery[{$URL},{HOST.HOST}]</key>
+                    <delay>21600</delay>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                    <item_prototypes>
+                        <item_prototype>
+                            <uuid>9d0c79911fee43f698d533076c314697</uuid>
+                            <name>Average read latency of the datastore - {#DATASTORE}</name>
+                            <type>SIMPLE</type>
+                            <key>vmware.datastore.read[{$URL},{#DATASTORE},latency]</key>
+                            <value_type>FLOAT</value_type>
+                            <username>{$USERNAME}</username>
+                            <password>{$PASSWORD}</password>
+                        </item_prototype>
+                    </item_prototypes>
+                    <graph_prototypes>
+                        <graph_prototype>
+                            <uuid>105314b99211418798f7057f7454527c</uuid>
+                            <name>Average read latency of the datastore - {#DATASTORE}</name>
+                            <graph_items>
+                                <graph_item>
+                                    <drawtype>FILLED_REGION</drawtype>
+                                    <color>90CAF9</color>
+                                    <calc_fnc>ALL</calc_fnc>
+                                    <item>
+                                        <host>ESXi</host>
+                                        <key>vmware.datastore.read[{$URL},{#DATASTORE},latency]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                    </graph_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+            <macros>
+                <macro>
+                    <macro>{$PASSWORD}</macro>
+                </macro>
+                <macro>
+                    <macro>{$URL}</macro>
+                </macro>
+                <macro>
+                    <macro>{$USERNAME}</macro>
+                </macro>
+            </macros>
+        </template>
+    </templates>
+</zabbix_export>
