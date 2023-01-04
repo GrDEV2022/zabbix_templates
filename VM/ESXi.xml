@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2023-01-04T12:08:37Z</date>
+    <date>2023-01-04T21:53:18Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -18,6 +18,135 @@
                     <name>custom_templates</name>
                 </group>
             </groups>
+            <items>
+                <item>
+                    <uuid>b0f2365bd0174a1f82d0cb2742b697c1</uuid>
+                    <name>ESXi Event log</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.eventlog[{$URL},all]</key>
+                    <trends>0</trends>
+                    <value_type>LOG</value_type>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
+                    <uuid>47b282814bcb4583b2fe99a2ede56665</uuid>
+                    <name>CPU Usage %</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.cpu.usage.perf[{$URL},{$UUID}]</key>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
+                    <uuid>8c4489c8b8ce406caea8aac0b7bb81b4</uuid>
+                    <name>CPU Usage</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.cpu.usage[{$URL},{$UUID}]</key>
+                    <units>Hz</units>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
+                    <uuid>9745352a29a949adbf3c908941f7065d</uuid>
+                    <name>CPU Frequence</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.hw.cpu.freq[{$URL},{$UUID}]</key>
+                    <units>Hz</units>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
+                    <uuid>745dfd37c2034f5da0c6340873e766bb</uuid>
+                    <name>CPU Cores</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.hw.cpu.num[{$URL},{$UUID}]</key>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
+                    <uuid>9c1a8b8809884045a2ce9dc9d8ed91bb</uuid>
+                    <name>CPU Threads</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.hw.cpu.threads[{$URL},{$UUID}]</key>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
+                    <uuid>4594ed6d3f584d149e836abc9e042ac6</uuid>
+                    <name>Total Memory</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.hw.memory[{$URL},{$UUID}]</key>
+                    <units>B</units>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
+                    <uuid>82ccf7fdd8be4336b1552f677b60287f</uuid>
+                    <name>Maintenance</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.maintenance[{$URL},{$UUID}]</key>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                    <description>0 - Non maintenance
+1 - Maintenance</description>
+                </item>
+                <item>
+                    <uuid>e28a1b8a3ab44b21afa5bd20765044de</uuid>
+                    <name>Memory used</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.memory.used[{$URL},{$UUID}]</key>
+                    <units>B</units>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
+                    <uuid>962f72cee924472a94082b7beac1f16e</uuid>
+                    <name>Network in</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.network.in[{$URL},{$UUID},bps]</key>
+                    <units>bps</units>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
+                    <uuid>a151fcb903ca489790074fe89ef3e5a7</uuid>
+                    <name>Network out</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.network.out[{$URL},{$UUID},bps]</key>
+                    <units>bps</units>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
+                    <uuid>b086bb00d6d04b598538031350ff1e83</uuid>
+                    <name>ESXi Uptime</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.uptime[{$URL},{$UUID}]</key>
+                    <units>s</units>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
+                    <uuid>19079cc213b443b7a3a0e0607aabb69c</uuid>
+                    <name>ESXi Version</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.version[{$URL},{$UUID}]</key>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
+                    <uuid>83c3745ee11441a0accd9aaa00cd2bb9</uuid>
+                    <name>VM Count</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.vm.num[{$URL},{$UUID}]</key>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+            </items>
             <discovery_rules>
                 <discovery_rule>
                     <uuid>0fcc85855a1f46ac95b073383b2fbf4d</uuid>
@@ -33,7 +162,35 @@
                             <name>Average read latency of the datastore - {#DATASTORE}</name>
                             <type>SIMPLE</type>
                             <key>vmware.datastore.read[{$URL},{#DATASTORE},latency]</key>
-                            <value_type>FLOAT</value_type>
+                            <units>ms</units>
+                            <username>{$USERNAME}</username>
+                            <password>{$PASSWORD}</password>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>f9ee72a6f3e541e2bcb3862bdf450e11</uuid>
+                            <name>Free size of the datastore - {#DATASTORE}</name>
+                            <type>SIMPLE</type>
+                            <key>vmware.datastore.size[{$URL},{#DATASTORE},free]</key>
+                            <units>B</units>
+                            <username>{$USERNAME}</username>
+                            <password>{$PASSWORD}</password>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>0057f772c38b49dca5bed7acd30f2f26</uuid>
+                            <name>Size of the datastore - {#DATASTORE}</name>
+                            <type>SIMPLE</type>
+                            <key>vmware.datastore.size[{$URL},{#DATASTORE},total]</key>
+                            <delay>21600</delay>
+                            <units>B</units>
+                            <username>{$USERNAME}</username>
+                            <password>{$PASSWORD}</password>
+                        </item_prototype>
+                        <item_prototype>
+                            <uuid>60253f8ab0f04ace9f53900b28ec4126</uuid>
+                            <name>Average write latency of the datastore {#DATASTORE}</name>
+                            <type>SIMPLE</type>
+                            <key>vmware.datastore.write[{$URL},{#DATASTORE},latency]</key>
+                            <units>ms</units>
                             <username>{$USERNAME}</username>
                             <password>{$PASSWORD}</password>
                         </item_prototype>
@@ -41,15 +198,55 @@
                     <graph_prototypes>
                         <graph_prototype>
                             <uuid>105314b99211418798f7057f7454527c</uuid>
-                            <name>Average read latency of the datastore - {#DATASTORE}</name>
+                            <name>Average read/write latency of the datastore - {#DATASTORE}</name>
+                            <ymin_type_1>FIXED</ymin_type_1>
                             <graph_items>
                                 <graph_item>
-                                    <drawtype>FILLED_REGION</drawtype>
-                                    <color>90CAF9</color>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>FF5722</color>
                                     <calc_fnc>ALL</calc_fnc>
                                     <item>
                                         <host>ESXi</host>
                                         <key>vmware.datastore.read[{$URL},{#DATASTORE},latency]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <drawtype>GRADIENT_LINE</drawtype>
+                                    <color>274482</color>
+                                    <calc_fnc>ALL</calc_fnc>
+                                    <item>
+                                        <host>ESXi</host>
+                                        <key>vmware.datastore.write[{$URL},{#DATASTORE},latency]</key>
+                                    </item>
+                                </graph_item>
+                            </graph_items>
+                        </graph_prototype>
+                        <graph_prototype>
+                            <uuid>c8c9e6669fd64e46a5fe46f5d07e0b76</uuid>
+                            <name>Size of the datastore - {#DATASTORE}</name>
+                            <yaxismax>0</yaxismax>
+                            <show_work_period>NO</show_work_period>
+                            <show_triggers>NO</show_triggers>
+                            <type>EXPLODED</type>
+                            <show_legend>NO</show_legend>
+                            <show_3d>YES</show_3d>
+                            <graph_items>
+                                <graph_item>
+                                    <color>1A7C11</color>
+                                    <calc_fnc>MIN</calc_fnc>
+                                    <item>
+                                        <host>ESXi</host>
+                                        <key>vmware.datastore.size[{$URL},{#DATASTORE},total]</key>
+                                    </item>
+                                </graph_item>
+                                <graph_item>
+                                    <sortorder>1</sortorder>
+                                    <color>274482</color>
+                                    <calc_fnc>MIN</calc_fnc>
+                                    <item>
+                                        <host>ESXi</host>
+                                        <key>vmware.datastore.size[{$URL},{#DATASTORE},free]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
@@ -70,4 +267,90 @@
             </macros>
         </template>
     </templates>
+    <graphs>
+        <graph>
+            <uuid>738de2f76e7340629c29f38e0f7f4cd4</uuid>
+            <name>CPU Usage</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>66BB6A</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>ESXi</host>
+                        <key>vmware.hv.cpu.usage[{$URL},{$UUID}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>4ffaecb2811e492d8a45cbe206f54b21</uuid>
+            <name>CPU Usage %</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>66BB6A</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>ESXi</host>
+                        <key>vmware.hv.cpu.usage.perf[{$URL},{$UUID}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>82c8b3bad1e44b94bc864b0f39eeeeea</uuid>
+            <name>Memory</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>1A7C11</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>ESXi</host>
+                        <key>vmware.hv.memory.used[{$URL},{$UUID}]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>274482</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>ESXi</host>
+                        <key>vmware.hv.hw.memory[{$URL},{$UUID}]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <uuid>3d541b55131f4bfc82bc9435cd5f2258</uuid>
+            <name>Network</name>
+            <ymin_type_1>FIXED</ymin_type_1>
+            <graph_items>
+                <graph_item>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>4DB6AC</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>ESXi</host>
+                        <key>vmware.hv.network.in[{$URL},{$UUID},bps]</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <drawtype>GRADIENT_LINE</drawtype>
+                    <color>FF7043</color>
+                    <calc_fnc>ALL</calc_fnc>
+                    <item>
+                        <host>ESXi</host>
+                        <key>vmware.hv.network.out[{$URL},{$UUID},bps]</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+    </graphs>
 </zabbix_export>
