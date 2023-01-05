@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2023-01-05T09:32:13Z</date>
+    <date>2023-01-05T10:34:59Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -344,7 +344,6 @@
                 </graph_item>
                 <graph_item>
                     <sortorder>1</sortorder>
-                    <drawtype>GRADIENT_LINE</drawtype>
                     <color>274482</color>
                     <calc_fnc>ALL</calc_fnc>
                     <item>
@@ -361,7 +360,7 @@
             <graph_items>
                 <graph_item>
                     <drawtype>GRADIENT_LINE</drawtype>
-                    <color>4DB6AC</color>
+                    <color>009688</color>
                     <calc_fnc>ALL</calc_fnc>
                     <item>
                         <host>ESXi</host>
