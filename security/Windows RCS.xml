@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>6.2</version>
+    <date>2023-01-05T12:16:55Z</date>
+    <template_groups>
+        <template_group>
+            <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
+            <name>custom_templates</name>
+        </template_group>
+    </template_groups>
+    <templates>
+        <template>
+            <uuid>23928f1c2b734a089bd448aaf7634863</uuid>
+            <template>Windows RCS</template>
+            <name>Windows RCS</name>
+            <description>Find Remote Control Soft on Windows.</description>
+            <groups>
+                <group>
+                    <name>custom_templates</name>
+                </group>
+            </groups>
+            <items>
+                <item>
+                    <uuid>81892e865ca84df987822d0f21585b26</uuid>
+                    <name>AnyDesk</name>
+                    <key>proc.num[anydesk.exe]</key>
+                    <delay>10</delay>
+                    <triggers>
+                        <trigger>
+                            <uuid>4f30c869cbc24f4bbdda356c8c651800</uuid>
+                            <expression>last(/Windows RCS/proc.num[anydesk.exe])&gt;0</expression>
+                            <recovery_mode>RECOVERY_EXPRESSION</recovery_mode>
+                            <recovery_expression>last(/Windows RCS/proc.num[anydesk.exe])=0</recovery_expression>
+                            <name>AnyDesk detected</name>
+                            <opdata>AnyDesk  detected!!!</opdata>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>

@@ -5,3 +5,5 @@ Servers
 - Dell PowerEdge R710 (iDrac6) (Dell EMC Server Administrator)
 VM
 - ESXi
+Security
+- Windows RCS (Detect Remoute Control Soft)
