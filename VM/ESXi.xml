@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>6.2</version>
-    <date>2023-01-04T21:53:18Z</date>
+    <date>2023-01-05T09:32:13Z</date>
     <template_groups>
         <template_group>
             <uuid>9a09eedc48704a368332b20c62f96a50</uuid>
@@ -49,10 +49,21 @@
                     <password>{$PASSWORD}</password>
                 </item>
                 <item>
+                    <uuid>eb03bdd76449471485c51a98e650e41b</uuid>
+                    <name>Full name</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.fullname[{$URL},{HOST.HOST}]</key>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
                     <uuid>9745352a29a949adbf3c908941f7065d</uuid>
                     <name>CPU Frequence</name>
                     <type>SIMPLE</type>
-                    <key>vmware.hv.hw.cpu.freq[{$URL},{$UUID}]</key>
+                    <key>vmware.hv.hw.cpu.freq[{$URL},{HOST.HOST}]</key>
+                    <value_type>FLOAT</value_type>
                     <units>Hz</units>
                     <username>{$USERNAME}</username>
                     <password>{$PASSWORD}</password>
@@ -61,7 +72,8 @@
                     <uuid>745dfd37c2034f5da0c6340873e766bb</uuid>
                     <name>CPU Cores</name>
                     <type>SIMPLE</type>
-                    <key>vmware.hv.hw.cpu.num[{$URL},{$UUID}]</key>
+                    <key>vmware.hv.hw.cpu.num[{$URL},{HOST.HOST}]</key>
+                    <delay>21600</delay>
                     <username>{$USERNAME}</username>
                     <password>{$PASSWORD}</password>
                 </item>
@@ -69,7 +81,7 @@
                     <uuid>9c1a8b8809884045a2ce9dc9d8ed91bb</uuid>
                     <name>CPU Threads</name>
                     <type>SIMPLE</type>
-                    <key>vmware.hv.hw.cpu.threads[{$URL},{$UUID}]</key>
+                    <key>vmware.hv.hw.cpu.threads[{$URL},{HOST.HOST}]</key>
                     <username>{$USERNAME}</username>
                     <password>{$PASSWORD}</password>
                 </item>
@@ -91,6 +103,15 @@
                     <password>{$PASSWORD}</password>
                     <description>0 - Non maintenance
 1 - Maintenance</description>
+                </item>
+                <item>
+                    <uuid>12f2aef37d704d548b7818cbe0c2a607</uuid>
+                    <name>CPU Max Hz</name>
+                    <type>CALCULATED</type>
+                    <key>vmware.hv.maxcpu</key>
+                    <value_type>FLOAT</value_type>
+                    <units>Hz</units>
+                    <params>last(//vmware.hv.hw.cpu.num[{$URL},{HOST.HOST}])*last(//vmware.hv.hw.cpu.freq[{$URL},{HOST.HOST}])</params>
                 </item>
                 <item>
                     <uuid>e28a1b8a3ab44b21afa5bd20765044de</uuid>
@@ -116,6 +137,14 @@
                     <type>SIMPLE</type>
                     <key>vmware.hv.network.out[{$URL},{$UUID},bps]</key>
                     <units>bps</units>
+                    <username>{$USERNAME}</username>
+                    <password>{$PASSWORD}</password>
+                </item>
+                <item>
+                    <uuid>902e58c756304ba68fc818ee33fafc4c</uuid>
+                    <name>Overall status</name>
+                    <type>SIMPLE</type>
+                    <key>vmware.hv.status[{$URL},{HOST.HOST}]</key>
                     <username>{$USERNAME}</username>
                     <password>{$PASSWORD}</password>
                 </item>
@@ -180,7 +209,7 @@
                             <name>Size of the datastore - {#DATASTORE}</name>
                             <type>SIMPLE</type>
                             <key>vmware.datastore.size[{$URL},{#DATASTORE},total]</key>
-                            <delay>21600</delay>
+                            <delay>60</delay>
                             <units>B</units>
                             <username>{$USERNAME}</username>
                             <password>{$PASSWORD}</password>
@@ -229,24 +258,23 @@
                             <show_work_period>NO</show_work_period>
                             <show_triggers>NO</show_triggers>
                             <type>EXPLODED</type>
-                            <show_legend>NO</show_legend>
                             <show_3d>YES</show_3d>
                             <graph_items>
                                 <graph_item>
                                     <color>1A7C11</color>
-                                    <calc_fnc>MIN</calc_fnc>
+                                    <calc_fnc>LAST</calc_fnc>
                                     <item>
                                         <host>ESXi</host>
-                                        <key>vmware.datastore.size[{$URL},{#DATASTORE},total]</key>
+                                        <key>vmware.datastore.size[{$URL},{#DATASTORE},free]</key>
                                     </item>
                                 </graph_item>
                                 <graph_item>
                                     <sortorder>1</sortorder>
                                     <color>274482</color>
-                                    <calc_fnc>MIN</calc_fnc>
+                                    <calc_fnc>LAST</calc_fnc>
                                     <item>
                                         <host>ESXi</host>
-                                        <key>vmware.datastore.size[{$URL},{#DATASTORE},free]</key>
+                                        <key>vmware.datastore.size[{$URL},{#DATASTORE},total]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
